@@ -30,8 +30,8 @@ std::vector<int> get_primes_under() {
 
   std::thread primes_threads[8];
 
-  for (int i = 0; i <= 7; i++) {
-    int min = range_increment * i;
+  for (int i = 0; i < 7; i++) {
+    int min = std::min(3, range_increment * i);
     int max = range_increment * (i + 1);
 
     primes_threads[i] = std::thread(get_primes_thread, min, max);
